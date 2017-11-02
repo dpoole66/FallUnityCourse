@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 813c2be2f38a18b4991df08d6e7732e0
+timeCreated: 1506009223
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: MATILDAS GRADE SCHOOL HAND_DEMO_script
+  fontNames:
+  - MATILDAS GRADE SCHOOL HAND_DEMO_script
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

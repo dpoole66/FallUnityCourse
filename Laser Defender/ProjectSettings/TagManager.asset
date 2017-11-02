@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Lazer
+  - PlayerOne
+  - Shredder
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - lazer
+  - Enemies
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: EnemyWeapons
+    uniqueID: 1061446449
+    locked: 0
+  - name: Enemy Ships
+    uniqueID: 439468985
+    locked: 0
+  - name: Player Weapons
+    uniqueID: 701049247
+    locked: 0
+  - name: Player Ship
+    uniqueID: 225168627
+    locked: 0
