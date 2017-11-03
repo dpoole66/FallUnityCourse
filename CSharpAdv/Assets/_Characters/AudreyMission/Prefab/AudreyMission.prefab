@@ -813,10 +813,10 @@ GameObject:
   - component: {fileID: 195206065241383464}
   - component: {fileID: 54330313066902278}
   - component: {fileID: 136804491575598136}
-  - component: {fileID: 114964289414223956}
   - component: {fileID: 114310867139785534}
   - component: {fileID: 114701890494138510}
   - component: {fileID: 114357868844401698}
+  - component: {fileID: 114121566848511600}
   m_Layer: 0
   m_Name: AudreyMission
   m_TagString: Witches
@@ -2426,6 +2426,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114121566848511600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617968219567418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822ada5c1b392764aaa2c698fadef768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setPatrol: 0
+  PatrolDestination: {fileID: 0}
 --- !u!114 &114310867139785534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2507,7 +2520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0359b2b84d8484d2281221cfda5470e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headSpeedModifier: 1
+  headSpeedModifier: 4.35
   headWeight: 1
   headBoneNonMecanimXform: {fileID: 0}
   useMicroSaccades: 1
@@ -2676,17 +2689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36a0cab44761dc44a3976d4ad6985cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114964289414223956
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1617968219567418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de68dfd59ab39db459246992d6ae34e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &124345306604438560
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2817,7 +2819,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ad2abc47d36bc48439b86abc40480b5e, type: 2}
+  - {fileID: 2100000, guid: bdba80f3bbdd1bc4cbb1478d0133a690, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3135,7 +3137,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1617968219567418}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.24
+  m_Radius: 0.41
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50

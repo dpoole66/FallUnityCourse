@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Characters\AudreyMission\Control\AudreyVision.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\LineOfSight.cs" />
      <Compile Include="Assets\_Characters\Rachael\RachaelAndMeController.cs" />
      <Compile Include="Assets\_Characters\Rachael\RachaelController.cs" />
      <Compile Include="Assets\_CharAnim\CharController.cs" />
@@ -91,7 +92,9 @@
      <Compile Include="Assets\Scripts\Character\LocomotionSimpleAgent.cs" />
      <Compile Include="Assets\Scripts\Character\LocoSimpleAgent.cs" />
      <Compile Include="Assets\Scripts\Character\LookAt.cs" />
+     <Compile Include="Assets\Scripts\Character\MouseMover.cs" />
      <Compile Include="Assets\Scripts\Character\MoveToInput.cs" />
+     <Compile Include="Assets\Scripts\Character\SpotLightFollow.cs" />
      <Compile Include="Assets\Scripts\Clicks\HandleClicks.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />

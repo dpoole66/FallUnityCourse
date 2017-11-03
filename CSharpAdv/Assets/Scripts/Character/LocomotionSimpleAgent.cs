@@ -40,7 +40,7 @@ public class LocomotionSimpleAgent : MonoBehaviour {
         if (Time.deltaTime > 1e-5f)
             velocity = smoothDeltaPosition / Time.deltaTime;
 
-        
+
         bool shouldMove = velocity.magnitude > 0.5f && agent.remainingDistance > agent.radius;
 
         // Update animation parameters
@@ -54,7 +54,7 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 
         //No Gesture
         if (Input.GetKeyDown(KeyCode.N)) {
-            noGesture = true;   
+            noGesture = true;
         }
         if (Input.GetKeyUp(KeyCode.N)) {
             noGesture = false;
@@ -72,7 +72,7 @@ public class LocomotionSimpleAgent : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.L)) {
             Debug.Log("loopy attempt");
             loopyGesture = true;
-            if(loopyGesture == true) {
+            if (loopyGesture == true) {
                 Debug.Log("loopy gesture is TRUE");
             }
         }
@@ -97,14 +97,14 @@ public class LocomotionSimpleAgent : MonoBehaviour {
 
 
 
-    //void OnAnimatorMove() {
+    void OnAnimatorMove() {
         // Update postion to agent position
         //		transform.position = agent.nextPosition;
 
         // Update position based on animation movement using navigation surface height
-    //    Vector3 position = anim.rootPosition;
-    //    position.y = agent.nextPosition.y;
-    //    transform.position = position;
-    //}
+        Vector3 position = anim.rootPosition;
+        position.y = agent.nextPosition.y;
+        transform.position = position;
 
+    }
 }

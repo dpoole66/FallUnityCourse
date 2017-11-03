@@ -25,19 +25,23 @@ public class LocomotionMouseAgent : MonoBehaviour {
     public Transform PatrolDestination = null;
 
 
-
-
-
-    void Start() {
+    void Awake() {
         thisAnimator = GetComponent<Animator>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.updatePosition = false;
-
     }
 
     void Update() {
 
         Vector3 worldDeltaPosition = agent.destination - transform.position;
+
+        //Move to Agent
+        if (Input.GetMouseButtonDown(0)) {
+            Debug.Log("Mouse");
+            RayCast();
+            Debug.Log("RayCast");
+
+        }
 
         // Map 'worldDeltaPosition' to local space
         float dx = Vector3.Dot(transform.right, worldDeltaPosition);
@@ -51,8 +55,8 @@ public class LocomotionMouseAgent : MonoBehaviour {
         smoothDeltaPosition = Vector2.Lerp(agent.destination, deltaPosition, walkDampen);
 
         // Update velocity if delta time is safe
-       // if (Time.deltaTime > 1e-5f)
-            velocity = smoothDeltaPosition / Time.deltaTime;
+        // if (Time.deltaTime > 1e-5f)
+        velocity = smoothDeltaPosition / Time.deltaTime;
 
 
         //bool shouldMove = velocity.magnitude > 0.5f && agent.remainingDistance > agent.radius;
@@ -68,11 +72,11 @@ public class LocomotionMouseAgent : MonoBehaviour {
         thisAnimator.SetBool("move", shouldMove);
         thisAnimator.SetFloat("velx", velocity.x);
         thisAnimator.SetFloat("vely", velocity.y);
-        
+
 
         //No Gesture
         if (Input.GetKeyDown(KeyCode.N)) {
-            noGesture = true;   
+            noGesture = true;
         }
         if (Input.GetKeyUp(KeyCode.N)) {
             noGesture = false;
@@ -109,22 +113,6 @@ public class LocomotionMouseAgent : MonoBehaviour {
         if (lookAt)
             lookAt.lookAtTargetPosition = agent.steeringTarget + transform.forward;
 
-        //		// Pull character towards agent
-        //		if (worldDeltaPosition.magnitude > agent.radius)
-        //			transform.position = agent.nextPosition - 0.9f*worldDeltaPosition;
-
-        //		// Pull agent towards character
-        //		if (worldDeltaPosition.magnitude > agent.radius)
-        //			agent.nextPosition = transform.position + 0.9f*worldDeltaPosition;
-
-        //Move to Agent
-        if (Input.GetMouseButtonDown(0)) {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray.origin, ray.direction, out hitInfo))
-                agent.destination = hitInfo.point;
-            transform.position = agent.nextPosition;
-            agent.updatePosition = true;
-        }
     }
 
 
@@ -132,22 +120,26 @@ public class LocomotionMouseAgent : MonoBehaviour {
 
         Vector3 position = thisAnimator.rootPosition;
         position = agent.nextPosition;
+        transform.position = position;
 
         //Patrol
         if (setPatrol == true) {
-           agent.destination = PatrolDestination.position;
-           transform.position = position;
-        } else {
-
-            // Update position based on animation movement using navigation surface height
-            //Vector3 position = thisAnimator.rootPosition;
-            //position.y = agent.nextPosition.y;
+            agent.destination = PatrolDestination.position;
             transform.position = position;
-
-            // Update postion to agent position
-            //transform.position = agent.nextPosition;
-
+            //} else {        
+            //    transform.position = position;   
         }
-    }
 
+    }
+    void RayCast() {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray.origin, ray.direction, out hitInfo)) {
+                agent.destination = hitInfo.point;
+                transform.position = agent.nextPosition;
+                agent.updatePosition = true;
+            }
+    }
 }
+
+
