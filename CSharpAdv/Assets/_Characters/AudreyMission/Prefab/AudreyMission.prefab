@@ -809,17 +809,19 @@ GameObject:
   m_Component:
   - component: {fileID: 4300155091676862}
   - component: {fileID: 95817929930166746}
-  - component: {fileID: 114801343464043108}
   - component: {fileID: 195206065241383464}
   - component: {fileID: 54330313066902278}
   - component: {fileID: 136804491575598136}
-  - component: {fileID: 114310867139785534}
-  - component: {fileID: 114701890494138510}
-  - component: {fileID: 114357868844401698}
-  - component: {fileID: 114121566848511600}
+  - component: {fileID: 114493202065359702}
+  - component: {fileID: 114417808468429918}
+  - component: {fileID: 114060773029808412}
+  - component: {fileID: 114668962029252076}
+  - component: {fileID: 114079905284445082}
+  - component: {fileID: 135191345999078196}
+  - component: {fileID: 114471330969294004}
   m_Layer: 0
   m_Name: AudreyMission
-  m_TagString: Witches
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1279,13 +1281,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1915834356665646}
-  m_LocalRotation: {x: 0.02478955, y: -4.092726e-12, z: -1.23066e-11, w: 0.9996927}
-  m_LocalPosition: {x: 0.03201524, y: 0.065920085, z: 0.090839595}
+  m_LocalRotation: {x: 0.015062928, y: -0.00000003234527, z: -0.00000039307218, w: 0.9998866}
+  m_LocalPosition: {x: 0.03201524, y: 0.06592015, z: 0.09083964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4089228625071574}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 2.841, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.7260001, y: 0, z: 0}
 --- !u!4 &4038990191821606
 Transform:
   m_ObjectHideFlags: 1
@@ -1467,13 +1469,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1788911081417650}
-  m_LocalRotation: {x: 0.02478955, y: -4.092726e-12, z: -1.23066e-11, w: 0.9996927}
-  m_LocalPosition: {x: -0.032094985, y: 0.06592108, z: 0.090844676}
+  m_LocalRotation: {x: 0.015062928, y: -0.00000003234527, z: -0.00000039307218, w: 0.9998866}
+  m_LocalPosition: {x: -0.032094985, y: 0.06592103, z: 0.09084476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4089228625071574}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 2.841, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.7260001, y: 0, z: 0}
 --- !u!4 &4200454992435008
 Transform:
   m_ObjectHideFlags: 1
@@ -2426,7 +2428,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114121566848511600
+--- !u!114 &114060773029808412
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2434,82 +2436,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1617968219567418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822ada5c1b392764aaa2c698fadef768, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPatrol: 0
-  PatrolDestination: {fileID: 0}
---- !u!114 &114310867139785534
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1617968219567418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614d6f292e2ab614d8ada3923f99214a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f5e4d88b4a47514596010385fc60067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 4089228625071574}
-  lookAtTargetPosition: {x: 3, y: 2, z: 0}
-  lookAtCoolTime: 0.2
+  lookAtTargetPosition: {x: 0, y: 0, z: 0}
+  lookAtCoolTime: 0.8
   lookAtHeatTime: 0.2
   looking: 1
---- !u!114 &114357868844401698
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1617968219567418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d5ab26285e294787a92bc8bba92c30a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointsOfInterest:
-  - {fileID: 0}
-  - {fileID: 0}
-  lookAtPlayerRatio: 0.1
-  stareBackFactor: 0
-  noticePlayerDistance: 0
-  personalSpaceDistance: 0
-  minLookTime: 3
-  maxLookTime: 10
-  thirdPersonPlayerEyeCenter: {fileID: 0}
-  keepTargetEvenWhenLost: 1
-  OnStartLookingAtPlayer:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnStopLookingAtPlayer:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114701890494138510}
-        m_MethodName: LookAtAreaAround
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &114607431755516360
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267288793259234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01aa9219ec40313448cc5dfc21878991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114701890494138510
+--- !u!114 &114079905284445082
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2520,7 +2455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0359b2b84d8484d2281221cfda5470e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headSpeedModifier: 4.35
+  headSpeedModifier: 3.92
   headWeight: 1
   headBoneNonMecanimXform: {fileID: 0}
   useMicroSaccades: 1
@@ -2562,20 +2497,20 @@ MonoBehaviour:
       isLookDownSet: 0
     leftEyeballEyeRotationLimiter:
       transform: {fileID: 4174002504862972}
-      defaultQ: {x: 0.058105916, y: -5.002221e-12, z: 3.026912e-12, w: 0.99831045}
-      lookUpQ: {x: -0.051308136, y: -5.456969e-12, z: 3.1832319e-12, w: 0.9986829}
-      lookDownQ: {x: 0.13232115, y: -4.5474735e-12, z: 3.8617998e-12, w: 0.99120694}
-      maxUpAngle: 12.5442505
-      maxDownAngle: 8.545286
+      defaultQ: {x: 0.02478955, y: -4.092726e-12, z: -1.23066e-11, w: 0.9996927}
+      lookUpQ: {x: -0.043958686, y: -1.2278179e-11, z: 2.125944e-11, w: 0.99903333}
+      lookDownQ: {x: 0.10135176, y: -3.9108272e-11, z: 3.3274716e-11, w: 0.9948507}
+      maxUpAngle: 7.879883
+      maxDownAngle: 8.793068
       isLookUpSet: 1
       isLookDownSet: 1
     rightEyeballEyeRotationLimiter:
       transform: {fileID: 4030017165073528}
-      defaultQ: {x: 0.058105916, y: -5.002221e-12, z: 3.026912e-12, w: 0.99831045}
-      lookUpQ: {x: -0.051308136, y: -5.456969e-12, z: 3.1832319e-12, w: 0.9986829}
-      lookDownQ: {x: 0.13232115, y: -4.5474735e-12, z: 3.8617998e-12, w: 0.99120694}
-      maxUpAngle: 12.5442505
-      maxDownAngle: 8.545286
+      defaultQ: {x: 0.02478955, y: -4.092726e-12, z: -1.23066e-11, w: 0.9996927}
+      lookUpQ: {x: -0.043958686, y: -1.2278179e-11, z: 2.125944e-11, w: 0.99903333}
+      lookDownQ: {x: 0.10135176, y: -3.9108272e-11, z: 3.3274716e-11, w: 0.9948507}
+      maxUpAngle: 7.879883
+      maxDownAngle: 8.793068
       isLookUpSet: 1
       isLookDownSet: 1
     eyelidControl: 0
@@ -2665,8 +2600,186 @@ MonoBehaviour:
     blendshapesForBlinking: []
     blendshapesForLookingUp: []
     blendshapesForLookingDown: []
-    blendshapesConfigs: []
-    isEyelidBlendshapeDefaultSet: 0
+    blendshapesConfigs:
+    - skinnedMeshRenderer: {fileID: 137346272959530390}
+      blendShapeCount: 50
+      blendshapeNames: []
+      blendshapeWeights:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - skinnedMeshRenderer: {fileID: 137738561141296824}
+      blendShapeCount: 0
+      blendshapeNames: []
+      blendshapeWeights: []
+    - skinnedMeshRenderer: {fileID: 137699681938705578}
+      blendShapeCount: 50
+      blendshapeNames: []
+      blendshapeWeights:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - skinnedMeshRenderer: {fileID: 137797015264566440}
+      blendShapeCount: 50
+      blendshapeNames: []
+      blendshapeWeights:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+    - skinnedMeshRenderer: {fileID: 137749571215024602}
+      blendShapeCount: 0
+      blendshapeNames: []
+      blendshapeWeights: []
+    - skinnedMeshRenderer: {fileID: 137753794581903136}
+      blendShapeCount: 0
+      blendshapeNames: []
+      blendshapeWeights: []
+    - skinnedMeshRenderer: {fileID: 137731550304440360}
+      blendShapeCount: 0
+      blendshapeNames: []
+      blendshapeWeights: []
+    isEyelidBlendshapeDefaultSet: 1
     isEyelidBlendshapeClosedSet: 0
     isEyelidBlendshapeLookUpSet: 0
     isEyelidBlendshapeLookDownSet: 0
@@ -2675,10 +2788,10 @@ MonoBehaviour:
   eyelidsFollowEyesVertically: 1
   maxEyeHorizAngle: 35
   maxEyeHorizAngleTowardsNose: 35
-  crossEyeCorrection: 1.02
-  nervousness: 1.43
-  limitHeadAngle: 0.209
---- !u!114 &114801343464043108
+  crossEyeCorrection: 5
+  nervousness: 0.35
+  limitHeadAngle: 0.215
+--- !u!114 &114417808468429918
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2686,9 +2799,83 @@ MonoBehaviour:
   m_GameObject: {fileID: 1617968219567418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d36a0cab44761dc44a3976d4ad6985cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 81d4751ceb196c0469c25819bc75f0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114471330969294004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617968219567418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d691f26eece68548ba6923a6eec6847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sensitity: 0
+  CanSeeTarget: 1
+  FieldOfView: 60
+  Target: {fileID: 0}
+  EyePoint: {fileID: 4808784456180196}
+  LastKnowSighting: {x: 0, y: 0, z: 0}
+--- !u!114 &114493202065359702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617968219567418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18c35d5fb15acb40bddb82d2b70cbd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveGesture: 0
+  setPatrol: 0
+  PatrolDestination: {fileID: 0}
+--- !u!114 &114607431755516360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267288793259234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01aa9219ec40313448cc5dfc21878991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114668962029252076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617968219567418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f588450314d8e54795f7c4b99284472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsOfInterest:
+  - {fileID: 0}
+  - {fileID: 0}
+  lookAtPlayerRatio: 0.214
+  stareBackFactor: 0
+  noticePlayerDistance: 5.1
+  personalSpaceDistance: 0.1
+  minLookTime: 3
+  maxLookTime: 10
+  thirdPersonPlayerEyeCenter: {fileID: 0}
+  keepTargetEvenWhenLost: 1
+  OnStartLookingAtPlayer:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnStopLookingAtPlayer:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!124 &124345306604438560
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2696,6 +2883,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267288793259234}
   m_Enabled: 0
+--- !u!135 &135191345999078196
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617968219567418}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136804491575598136
 CapsuleCollider:
   m_ObjectHideFlags: 1
