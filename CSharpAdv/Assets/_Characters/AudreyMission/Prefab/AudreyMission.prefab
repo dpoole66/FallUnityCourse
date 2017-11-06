@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 114668962029252076}
   - component: {fileID: 114079905284445082}
   - component: {fileID: 135191345999078196}
-  - component: {fileID: 114471330969294004}
+  - component: {fileID: 114564740634155516}
   m_Layer: 0
   m_Name: AudreyMission
   m_TagString: Player
@@ -2802,23 +2802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d4751ceb196c0469c25819bc75f0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114471330969294004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1617968219567418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d691f26eece68548ba6923a6eec6847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sensitity: 0
-  CanSeeTarget: 1
-  FieldOfView: 60
-  Target: {fileID: 0}
-  EyePoint: {fileID: 4808784456180196}
-  LastKnowSighting: {x: 0, y: 0, z: 0}
 --- !u!114 &114493202065359702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2833,6 +2816,23 @@ MonoBehaviour:
   waveGesture: 0
   setPatrol: 0
   PatrolDestination: {fileID: 0}
+--- !u!114 &114564740634155516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617968219567418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a9cc928b85d7d94abb1ec4ff5e21710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sensitity: 0
+  CanSeeTarget: 0
+  FieldOfView: 60
+  Target: {fileID: 0}
+  EyePoint: {fileID: 4808784456180196}
+  LastKnowSighting: {x: 0, y: 0, z: 0}
 --- !u!114 &114607431755516360
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 114703100174320358}
   - component: {fileID: 54372165735325526}
   - component: {fileID: 82720590201676802}
-  - component: {fileID: 135044476306101300}
   m_Layer: 0
   m_Name: FirstPersonControl
   m_TagString: Player
@@ -89,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273729695479868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4871619074880888}
@@ -451,18 +450,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404109480066108}
   m_Enabled: 1
---- !u!135 &135044476306101300
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1273729695479868}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &143634272553081102
 CharacterController:
   m_ObjectHideFlags: 1

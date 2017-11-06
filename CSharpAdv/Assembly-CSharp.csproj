@@ -51,16 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Characters\AudreyMission\Control\AudreyVision.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\ClickToMoveAudrey.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\LineOfSight.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\LineOfSightAudrey.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\LocomotionAgentAudrey.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\LocomotionMouseAgent.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\PatrolAgentAudrey.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\SpotLightFollow.cs" />
-     <Compile Include="Assets\_Characters\Rachael\RachaelAndMeController.cs" />
-     <Compile Include="Assets\_Characters\Rachael\RachaelController.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\AudreyVision.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\ClickToMoveAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LineOfSight.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LineOfSightAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LocomotionAgentAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LocomotionMouseAgent.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LookAtAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LookTargetAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\PatrolAgentAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\SpotLightFollow.cs" />
      <Compile Include="Assets\_CharAnim\CharController.cs" />
      <Compile Include="Assets\_CharAnim\PositionSaver.cs" />
      <Compile Include="Assets\_CharAnim\Sam\SamController.cs" />
@@ -74,7 +74,6 @@
      <Compile Include="Assets\RealisticEyeMovements\Scripts\CritDampTweenQuaternion.cs" />
      <Compile Include="Assets\RealisticEyeMovements\Scripts\DestroyNotifier.cs" />
      <Compile Include="Assets\RealisticEyeMovements\Scripts\EyeAndHeadAnimator.cs" />
-     <Compile Include="Assets\RealisticEyeMovements\Scripts\LookTargetAudrey.cs" />
      <Compile Include="Assets\RealisticEyeMovements\Scripts\LookTargetController.cs" />
      <Compile Include="Assets\RealisticEyeMovements\Scripts\SerializableQuaternion.cs" />
      <Compile Include="Assets\RealisticEyeMovements\Scripts\SerializableVector3.cs" />
@@ -98,7 +97,6 @@
      <Compile Include="Assets\Scripts\Character\LocomotionSimpleAgent.cs" />
      <Compile Include="Assets\Scripts\Character\LocoSimpleAgent.cs" />
      <Compile Include="Assets\Scripts\Character\LookAt.cs" />
-     <Compile Include="Assets\Scripts\Character\LookAtAudrey.cs" />
      <Compile Include="Assets\Scripts\Character\MouseMover.cs" />
      <Compile Include="Assets\Scripts\Character\MoveToInput.cs" />
      <Compile Include="Assets\Scripts\Clicks\HandleClicks.cs" />
