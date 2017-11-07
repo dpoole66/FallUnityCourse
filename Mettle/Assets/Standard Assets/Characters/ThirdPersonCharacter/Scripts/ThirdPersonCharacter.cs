@@ -37,7 +37,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         bool m_Defend;
         bool m_Retire;
         bool m_Patrol;
+
         public Transform PatrolDestination = null;
+        Vector2 velocity = Vector2.zero;
 
 
 
@@ -132,13 +134,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void UpdateAnimator(Vector3 move)
 		{
-			// update the animator parameters
-			m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
+
+            // update the animator parameters
+            m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
             m_Animator.SetBool("OnGround", m_IsGrounded);
             // Actions
             m_Animator.SetBool("OnGuard", m_OnGuard);
-			m_Animator.SetBool("Attack", m_Attack);
+            
+            m_Animator.SetBool("Attack", m_Attack);
             m_Animator.SetBool("Attack_Thor", m_AttackThor);
             m_Animator.SetBool("Defend", m_Defend);
             m_Animator.SetBool("Retire", m_Retire);
@@ -166,6 +170,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (m_IsGrounded && move.magnitude > 0)
 			{
 				m_Animator.speed = m_AnimSpeedMultiplier;
+               
 			}
 			else
 			{
@@ -216,6 +221,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             position = ThisAgent.nextPosition;
             transform.position = position;
 
+
             // we implement this function to override the default root motion.
             // this allows us to modify the positional speed before it's applied.
             if (m_IsGrounded && Time.deltaTime > 0)
@@ -232,6 +238,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 ThisAgent.destination = PatrolDestination.position;
                 transform.position = position; 
             }
+
         }
 
 

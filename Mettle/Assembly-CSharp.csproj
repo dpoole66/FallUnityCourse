@@ -51,10 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Scripts\PlaceTargetWithMouse.cs" />
-     <Compile Include="Assets\_Scripts\SightLineDetect.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_Enemy.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyHealth.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyKnight.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerHealth.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerKnight.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\AICharacterControl.cs" />
+     <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\MoveToTarget.cs" />
+     <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\PlaceTargetWithMouse.cs" />
+     <Compile Include="Assets\_Scripts\Vision\SightLineDetect.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>C:/Program Files/Unity 2017.2.0b9/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>
