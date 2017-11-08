@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-//[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
-//[RequireComponent(typeof(Animator))]
+
+[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+[RequireComponent(typeof(Animator))]
+
 public class AI_PlayerKnight : MonoBehaviour {
 
     //-- Setup Finite State Machine with 3 states. Set current state to Patrol.
@@ -76,15 +78,24 @@ public class AI_PlayerKnight : MonoBehaviour {
 
     //-- Primary body after FSM
     private UnityEngine.AI.NavMeshAgent ThisAgent = null;
+    private Animator ThisAnimator = null;
     public Transform PatrolDestination = null;
 
 	// Use this for initialization
 	void Awake () {
         ThisAgent = GetComponent<NavMeshAgent>();
-	}
+        ThisAnimator = GetComponent<Animator>();
+
+        ThisAgent.updateRotation = true;
+        ThisAgent.updatePosition = true;
+    }
 	
+    void OnAnimatorMove() {
+        transform.position = ThisAgent.nextPosition;
+    }
+
 	// Update is called once per frame
 	void Update () {
-        ThisAgent.SetDestination(PatrolDestination.position);
+        //ThisAgent.SetDestination(ThisAgent.nextPosition);
 	}
 }

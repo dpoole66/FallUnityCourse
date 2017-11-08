@@ -141,7 +141,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_Animator.SetBool("OnGround", m_IsGrounded);
             // Actions
             m_Animator.SetBool("OnGuard", m_OnGuard);
-            
             m_Animator.SetBool("Attack", m_Attack);
             m_Animator.SetBool("Attack_Thor", m_AttackThor);
             m_Animator.SetBool("Defend", m_Defend);
@@ -149,8 +148,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_Animator.SetBool("Patrol", m_Patrol);
 
             if (!m_IsGrounded)
-			{
-				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
+
+            {
+				m_Animator.SetFloat("Move", m_Rigidbody.velocity.y);
 			}
 
 			// calculate which leg is behind, so as to leave that leg trailing in the jump animation
@@ -245,10 +245,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		void CheckGroundStatus()
 		{
 			RaycastHit hitInfo;
-#if UNITY_EDITOR
+            #if UNITY_EDITOR
 			// helper to visualise the ground check ray in the scene view
 			Debug.DrawLine(transform.position + (Vector3.up * 0.1f), transform.position + (Vector3.up * 0.1f) + (Vector3.down * m_GroundCheckDistance));
-#endif
+            #endif
 			// 0.1f is a small offset to start the ray from inside the character
 			// it is also good to note that the transform position in the sample assets is at the base of the character
 			if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))

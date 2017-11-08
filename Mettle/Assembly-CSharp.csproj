@@ -57,6 +57,11 @@
      <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerHealth.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerKnight.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\AICharacterControl.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\ClickToMove.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\MoveToInput.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\PatrolAgentMettle.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\ThirdPersonMettle.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\ThirdPersonMettleControl.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\MoveToTarget.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\_Scripts\Vision\SightLineDetect.cs" />

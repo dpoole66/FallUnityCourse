@@ -86,12 +86,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4893319145191910}
   - component: {fileID: 95765308180131806}
-  - component: {fileID: 54761427456931080}
+  - component: {fileID: 54312549618238850}
+  - component: {fileID: 195497319684172152}
   - component: {fileID: 135460133349486328}
   - component: {fileID: 136334331200261048}
-  - component: {fileID: 195162125050238062}
-  - component: {fileID: 114791303363965388}
-  - component: {fileID: 114156106001523854}
+  - component: {fileID: 114545129048966702}
+  - component: {fileID: 114875306081820298}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -321,7 +321,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566613794725650}
   m_Mesh: {fileID: 4300004, guid: 464d9a6afc618114fbbb3776bf31f623, type: 3}
---- !u!54 &54761427456931080
+--- !u!54 &54312549618238850
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -353,7 +353,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114156106001523854
+--- !u!114 &114545129048966702
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -361,30 +361,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1631624938754044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b5578efe8c1b7743b435480193178c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 360
-  m_StationaryTurnSpeed: 180
-  m_JumpPower: 12
-  m_GravityMultiplier: 2
-  m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 1
-  m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.1
+  velocity: {x: 0, y: 0, z: 0}
+  walkSpeed: 1
+--- !u!114 &114875306081820298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1631624938754044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5d6fb4c553c3a743a0b4f980e04f1cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
   PatrolDestination: {fileID: 0}
---- !u!114 &114791303363965388
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1631624938754044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a018171c11976d049bd48a4dbfb504a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 100
 --- !u!135 &135460133349486328
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -456,7 +450,7 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.048979044, y: 0.040643618, z: 0.009935528}
     m_Extent: {x: 1.0817201, y: 0.34777677, z: 0.53574145}
   m_DirtyAABB: 0
---- !u!195 &195162125050238062
+--- !u!195 &195497319684172152
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
