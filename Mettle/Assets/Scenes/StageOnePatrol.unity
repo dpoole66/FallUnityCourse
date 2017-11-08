@@ -446,13 +446,30 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1818400003}
-  m_LocalRotation: {x: -0.043533713, y: 0.9121482, z: -0.10057127, w: -0.39493802}
-  m_LocalPosition: {x: 5.3935337, y: 1.1762309, z: 5.1576824}
+  m_LocalRotation: {x: 0.33422115, y: -0.012427511, z: 0.0044198525, w: 0.9424024}
+  m_LocalPosition: {x: 0.040648535, y: 2.645551, z: -1.2256993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1832723586 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1631624938754044, guid: 3aa454df69811c8419fd6488af7fa692,
+    type: 2}
+  m_PrefabInternal: {fileID: 2004641795}
+--- !u!114 &1832723588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1832723586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5578efe8c1b7743b435480193178c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1001 &2004641795
 Prefab:
   m_ObjectHideFlags: 0
@@ -497,6 +514,7 @@ Prefab:
       propertyPath: PatrolDestination
       value: 
       objectReference: {fileID: 663998110}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114731363884040968, guid: 3aa454df69811c8419fd6488af7fa692, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 3aa454df69811c8419fd6488af7fa692, type: 2}
   m_IsPrefabParent: 0

@@ -80,6 +80,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Is Moving
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -160,7 +166,7 @@ BlendTree:
     m_DirectBlendParameter: Forward
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b1a5e04ae51004842aba06704a6c2903, type: 3}
+    m_Motion: {fileID: 7400060, guid: 464d9a6afc618114fbbb3776bf31f623, type: 3}
     m_Threshold: 0.13333334
     m_Position: {x: 0, y: 0.5}
     m_TimeScale: 1
@@ -299,11 +305,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: VeloX
-    m_EventTreshold: 0
-  - m_ConditionMode: 6
-    m_ConditionEvent: VeloZ
+  - m_ConditionMode: 2
+    m_ConditionEvent: Is Moving
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102218458898786990}
@@ -311,7 +314,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.01
+  m_TransitionDuration: 0.025
   m_TransitionOffset: 0
   m_ExitTime: 0.7448985
   m_HasExitTime: 0
@@ -350,11 +353,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 7
-    m_ConditionEvent: VeloX
-    m_EventTreshold: 0
-  - m_ConditionMode: 7
-    m_ConditionEvent: VeloZ
+  - m_ConditionMode: 1
+    m_ConditionEvent: Is Moving
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102737275377373136}
@@ -362,7 +362,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.01
+  m_TransitionDuration: 0.014
   m_TransitionOffset: 0
   m_ExitTime: 0.75
   m_HasExitTime: 0
