@@ -67,6 +67,9 @@
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\MoveToTarget.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\_Scripts\Vision\SightLineDetect.cs" />
+     <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\IKHands.cs" />
+     <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\SmoothFollow.cs" />
+     <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\WarriorAnimationDemoFREE.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

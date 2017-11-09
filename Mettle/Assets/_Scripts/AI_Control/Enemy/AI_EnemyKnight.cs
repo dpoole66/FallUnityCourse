@@ -11,8 +11,20 @@ public class AI_EnemyKnight : MonoBehaviour {
     public Transform PatrolDestination;
     Animator ThisAnimator;
     public Vector3 velocity;
-    bool isWalking = false;
     bool Patrol;
+    bool Chase;
+    bool Attack;
+
+    //Hashing the Animator params
+    int MovemntStageHash = Animator.StringToHash("Movement Stage");
+    int IdleHash = Animator.StringToHash("Idle");
+    int PatrolHash = Animator.StringToHash("Patrol");
+    int WalkHash = Animator.StringToHash("Walk");
+    int RunHash = Animator.StringToHash("Run");
+    int AttackHash = Animator.StringToHash("Attack");
+
+    //int runStateHash = Animator.StringToHash("Base Layer.Run");
+
 
     // Use this for initialization
     void Awake() {
@@ -21,7 +33,7 @@ public class AI_EnemyKnight : MonoBehaviour {
         ThisAgent.updatePosition = false;
     }
 
-    void Update() {
+    void FixedUpdate() {
 
         Vector3 position = ThisAnimator.rootPosition;
         position = ThisAgent.nextPosition;
@@ -35,23 +47,42 @@ public class AI_EnemyKnight : MonoBehaviour {
         ThisAnimator.SetInteger("VeloZ", Mathf.RoundToInt(velocity.z));
 
         if (Mathf.Abs(moveValue) == 0) {
-            ThisAnimator.SetInteger("Move", 0);
+            ThisAnimator.SetInteger(MovemntStageHash, 0);
+            ThisAnimator.SetBool(IdleHash, true);
+        } else {
+            ThisAnimator.SetBool(IdleHash, false);
         }
 
         if (Mathf.Abs(moveValue) == 1) {
-            ThisAnimator.SetInteger("Move", 1);
+            ThisAnimator.SetInteger(MovemntStageHash, 1);
+            ThisAnimator.SetBool(WalkHash, true);
+        } else {
+            ThisAnimator.SetBool(WalkHash, false);
         }
 
         if (Mathf.Abs(moveValue) == 2) {
-            ThisAnimator.SetInteger("Move", 2);
+            ThisAnimator.SetInteger(MovemntStageHash, 2);
+            ThisAnimator.SetBool(RunHash, true);
+        } else {
+            ThisAnimator.SetBool(RunHash, false);
         }
 
         if (Mathf.Abs(moveValue) == 3) {
-            ThisAnimator.SetInteger("Move", 3);
+            ThisAnimator.SetInteger(MovemntStageHash, 3);
         }
 
         if (ThisAgent.SetDestination(PatrolDestination.position)) {
-            ThisAnimator.SetBool("Patrol", true);
+            ThisAnimator.SetBool(PatrolHash, true);
+        }
+
+        //AnimatorStateInfo stateInfo = ThisAnimator.GetCurrentAnimatorStateInfo(0);
+
+        //if (Input.GetKeyDown(KeyCode.X) && stateInfo.fullPathHash == runStateHash) {
+        //    ThisAnimator.SetTrigger(AttackHash);
+        //}
+
+        if (Input.GetKeyDown(KeyCode.X)) {
+            ThisAnimator.SetTrigger(AttackHash);
         }
 
         bool Moving = velocity.magnitude > 0.0f;
