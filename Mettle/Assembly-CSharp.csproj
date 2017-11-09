@@ -63,6 +63,7 @@
      <Compile Include="Assets\_Scripts\AI_Control\Player\PatrolAgentMettle.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\ThirdPersonMettle.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\ThirdPersonMettleControl.cs" />
+     <Compile Include="Assets\_Scripts\Alt_PlayerControl\Basic\locomotion.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\MoveToTarget.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\_Scripts\Vision\SightLineDetect.cs" />

@@ -41,7 +41,7 @@ public class SightLineDetect : MonoBehaviour {
     bool InFOV() {
         //Get direction to target
         Vector3 DirToTarget = AI_Target.position - EyePoint.position;
-        Debug.Log("Direction " + DirToTarget);
+        //Debug.Log("Direction " + DirToTarget);
 
         //Get angle between forward and look direction
         float Angle = Vector3.Angle(EyePoint.forward, DirToTarget);

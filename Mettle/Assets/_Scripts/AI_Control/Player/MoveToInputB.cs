@@ -50,17 +50,13 @@ public class MoveToInputB : MonoBehaviour {
         // Update velocity if delta time is safe
         if (Time.deltaTime > 1e-5f)
             velocity = smoothDeltaPosition / Time.deltaTime;
+            ThisAgent.velocity = velocity;
 
         UpdateAnimator();
 
     }
 
     void UpdateAnimator() {
-
-        if (Time.deltaTime > 1e-5f) {
-            //velocity = ThisAgent.destination - transform.position / Time.deltaTime;
-            velocity = ThisAgent.velocity;
-        }
 
         bool isMoving = velocity.magnitude > 0.5f && ThisAgent.remainingDistance > ThisAgent.radius;
 

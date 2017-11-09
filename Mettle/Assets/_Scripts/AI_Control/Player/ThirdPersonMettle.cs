@@ -32,11 +32,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 
 
-        bool m_OnGuard;
+        //bool m_OnGuard;
         bool m_Attack;
-        bool m_AttackThor;
-        bool m_Defend;
-        bool m_Retire;
+        //bool m_AttackThor;
+        //bool m_Defend;
+        //bool m_Retire;
         bool m_Patrol;
         Vector2 smoothDeltaPosition = Vector2.zero;
 
@@ -109,11 +109,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             m_Animator.SetFloat("Forward", m_ForwardAmount, 0.1f, Time.deltaTime);
 			m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
             // Actions
-            m_Animator.SetBool("OnGuard", m_OnGuard);
+            //m_Animator.SetBool("OnGuard", m_OnGuard);
             m_Animator.SetBool("Attack", m_Attack);
-            m_Animator.SetBool("Attack_Thor", m_AttackThor);
-            m_Animator.SetBool("Defend", m_Defend);
-            m_Animator.SetBool("Retire", m_Retire);
+            //m_Animator.SetBool("Attack_Thor", m_AttackThor);
+            //m_Animator.SetBool("Defend", m_Defend);
+            //m_Animator.SetBool("Retire", m_Retire);
             m_Animator.SetBool("Patrol", m_Patrol);
             m_Animator.SetFloat("VeloX", velocity.x);
             m_Animator.SetFloat("VeloY", velocity.y);

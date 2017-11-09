@@ -23,6 +23,7 @@ public class MoveToInput : MonoBehaviour {
         ThisAnimator = GetComponent<Animator>();
         //Movement Plus:
         ThisAgent.updatePosition = false;
+        ThisAgent.updateRotation = true;
         //
     }
 
@@ -65,13 +66,7 @@ public class MoveToInput : MonoBehaviour {
         ThisAnimator.SetInteger("VeloX", Mathf.RoundToInt(velocity.x));
         ThisAnimator.SetInteger("VeloZ", Mathf.RoundToInt(velocity.z));
 
-
-        //Set Patrol toggle
-        if (Input.GetButtonDown("Patrol")) {
-            Patrol = !Patrol;
-        }
-
-        //Set Walk true/false
+   
         if (velocity.x != 0.0f) {
             ThisAnimator.SetInteger("Walk", 1);
             isWalking = true;

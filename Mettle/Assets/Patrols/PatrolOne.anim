@@ -21,25 +21,25 @@ AnimationClip:
         time: 0
         value: {x: -3, y: 0, z: -3.15}
         inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: 0, y: 0, z: -0.20860605}
         tangentMode: 0
       - serializedVersion: 2
         time: 0.5
         value: {x: -3, y: 0, z: 3.85}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        inSlope: {x: 0, y: 0, z: 14}
+        outSlope: {x: 13.5, y: 0, z: 0.7449089}
         tangentMode: 0
       - serializedVersion: 2
         time: 1
         value: {x: 3.75, y: 0, z: 3.85}
         inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: 0, y: 0, z: -14}
         tangentMode: 0
       - serializedVersion: 2
         time: 1.5
         value: {x: 3.75, y: 0, z: -3.15}
         inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: -13.5, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
         time: 2
@@ -97,32 +97,32 @@ AnimationClip:
         time: 0
         value: -3
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: 0
+        tangentMode: 1
       - serializedVersion: 2
         time: 0.5
         value: -3
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: 13.5
+        tangentMode: 1
       - serializedVersion: 2
         time: 1
         value: 3.75
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: 0
+        tangentMode: 1
       - serializedVersion: 2
         time: 1.5
         value: 3.75
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: -13.5
+        tangentMode: 1
       - serializedVersion: 2
         time: 2
         value: -3
         inSlope: 0
         outSlope: Infinity
-        tangentMode: 97
+        tangentMode: 1
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -137,32 +137,32 @@ AnimationClip:
         time: 0
         value: 0
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: 0
+        tangentMode: 1
       - serializedVersion: 2
         time: 0.5
         value: 0
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: 0
+        tangentMode: 1
       - serializedVersion: 2
         time: 1
         value: 0
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: 0
+        tangentMode: 1
       - serializedVersion: 2
         time: 1.5
         value: 0
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: 0
+        tangentMode: 1
       - serializedVersion: 2
         time: 2
         value: 0
         inSlope: 0
         outSlope: Infinity
-        tangentMode: 97
+        tangentMode: 1
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -177,32 +177,32 @@ AnimationClip:
         time: 0
         value: -3.15
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: -0.20860605
+        tangentMode: 1
       - serializedVersion: 2
         time: 0.5
         value: 3.85
-        inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        inSlope: 14
+        outSlope: 0.7449089
+        tangentMode: 1
       - serializedVersion: 2
         time: 1
         value: 3.85
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: -14
+        tangentMode: 1
       - serializedVersion: 2
         time: 1.5
         value: -3.15
         inSlope: 0
-        outSlope: Infinity
-        tangentMode: 97
+        outSlope: 0
+        tangentMode: 1
       - serializedVersion: 2
         time: 2
         value: -3.15
         inSlope: 0
         outSlope: Infinity
-        tangentMode: 97
+        tangentMode: 1
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
