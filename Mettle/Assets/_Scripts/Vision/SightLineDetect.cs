@@ -15,7 +15,7 @@ public class SightLineDetect : MonoBehaviour {
     public bool CanSeeTarget = false;
 
     //FOV
-    public float FieldOfView = 45f;
+    public float FieldOfView = 60f;
 
     //Reference to target
     public Transform AI_Target = null;
@@ -38,6 +38,7 @@ public class SightLineDetect : MonoBehaviour {
         LastKnowSighting = ThisTransform.position;
     }
     //------------------------------------------
+
     bool InFOV() {
         //Get direction to target
         Vector3 DirToTarget = AI_Target.position - EyePoint.position;
@@ -56,20 +57,23 @@ public class SightLineDetect : MonoBehaviour {
         //Not within view
         return false;
     }
+   
     //------------------------------------------
+
     bool ClearLineofSight() {
         RaycastHit Info;
 
         if (Physics.Raycast(EyePoint.position, (AI_Target.position - EyePoint.position).normalized, out Info, ThisCollider.radius)) {
             //If player, then can see player
             if (Info.transform.CompareTag("Player"))
-                Debug.Log("Hit");
             return true;
         }
 
         return false;
     }
+
     //------------------------------------------
+
     void UpdateSight() {
         switch (Sensitity) {
             case SightSensitivity.STRICT:
@@ -81,7 +85,9 @@ public class SightLineDetect : MonoBehaviour {
             break;
         }
     }
+
     //------------------------------------------
+
     void OnTriggerStay(Collider Other) {
         UpdateSight();
 

@@ -13,8 +13,8 @@ public class MoveToInput : MonoBehaviour {
     RaycastHit hitInfo = new RaycastHit();
     UnityEngine.AI.NavMeshAgent ThisAgent;
     public Vector3 velocity;
-    bool Patrol;
-    bool isWalking = false;
+    //bool Patrol;
+    //bool isWalking = false;
 
 
     // Use this for initialization
@@ -59,20 +59,20 @@ public class MoveToInput : MonoBehaviour {
 
         velocity = ThisAgent.velocity;
 
-        bool isMoving = velocity.magnitude > 0.5f && ThisAgent.remainingDistance > ThisAgent.radius;
-
-        ThisAnimator.SetBool("Patrol", Patrol);
-        ThisAnimator.SetBool("Is Moving", isMoving);
+        //bool isMoving = velocity.magnitude > 0.5f && ThisAgent.remainingDistance > ThisAgent.radius;
+        
+        //ThisAnimator.SetBool("Patrol", Patrol);
+        //ThisAnimator.SetBool("Is Moving", isMoving);
         ThisAnimator.SetInteger("VeloX", Mathf.RoundToInt(velocity.x));
         ThisAnimator.SetInteger("VeloZ", Mathf.RoundToInt(velocity.z));
 
    
-        if (velocity.x != 0.0f) {
-            ThisAnimator.SetInteger("Walk", 1);
-            isWalking = true;
-        } else {
-            ThisAnimator.SetInteger("Walk", 0);
-        }
+        //if (velocity.x != 0.0f) {
+        //    ThisAnimator.SetInteger("Walk", 1);
+            //isWalking = true;
+        //} else {
+        //    ThisAnimator.SetInteger("Walk", 0);
+        //}
 
     }
 }

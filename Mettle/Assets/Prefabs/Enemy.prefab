@@ -112,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4703683493541510}
   - component: {fileID: 137176921341901214}
+  - component: {fileID: 114710654615379910}
   m_Layer: 0
   m_Name: knight
   m_TagString: Untagged
@@ -296,16 +297,15 @@ GameObject:
   - component: {fileID: 4463717054707004}
   - component: {fileID: 95529863258691488}
   - component: {fileID: 54614848258597432}
-  - component: {fileID: 136744816700416038}
-  - component: {fileID: 135440306815080990}
   - component: {fileID: 195070119338875154}
-  - component: {fileID: 114724836759128944}
-  - component: {fileID: 114894323118604948}
+  - component: {fileID: 135440306815080990}
+  - component: {fileID: 136744816700416038}
+  - component: {fileID: 114951694429886616}
   - component: {fileID: 114812124307431086}
-  - component: {fileID: 114290588319776752}
+  - component: {fileID: 114072190247138574}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1121,7 +1121,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012972633076578}
-  m_LocalRotation: {x: 0.6943065, y: -0.0018702706, z: 0.71967316, w: -0.0023574855}
+  m_LocalRotation: {x: 0.69430655, y: -0.0018702691, z: 0.7196732, w: -0.0023574857}
   m_LocalPosition: {x: -0.20052062, y: 0.000047626494, z: -0.041074388}
   m_LocalScale: {x: 1, y: 1, z: 1.0000001}
   m_Children:
@@ -1804,7 +1804,7 @@ Animator:
   m_GameObject: {fileID: 1246060676780802}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 464d9a6afc618114fbbb3776bf31f623, type: 3}
-  m_Controller: {fileID: 9100000, guid: 9d7139a0cf364c141bf459028be94c44, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0ae3af21119929d4292cfa9b2e469a77, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1812,7 +1812,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114290588319776752
+--- !u!114 &114072190247138574
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1820,30 +1820,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1246060676780802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad63de6be35ff84b8005a76b0e03b5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8476595e36855084dbbd15478a515d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 100
---- !u!114 &114724836759128944
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1246060676780802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce7a80d520cacc042b5fe14f373d8173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MovingTurnSpeed: 360
-  m_StationaryTurnSpeed: 180
-  m_JumpPower: 12
-  m_GravityMultiplier: 2
-  m_RunCycleLegOffset: 0.2
-  m_MoveSpeedMultiplier: 1
-  m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.1
+  currentstate: 0
+  velocity: {x: 0, y: 0, z: 0}
+  PlayerHealth: {fileID: 0}
   PatrolDestination: {fileID: 0}
+  MaxDamage: 10
+--- !u!114 &114710654615379910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1067505389324004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d91b89dcbea76c44a3abfab2255dade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisRenderer: {fileID: 137176921341901214}
 --- !u!114 &114812124307431086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1861,7 +1857,7 @@ MonoBehaviour:
   AI_Target: {fileID: 0}
   EyePoint: {fileID: 4083293920674184}
   LastKnowSighting: {x: 0, y: 0, z: 0}
---- !u!114 &114894323118604948
+--- !u!114 &114951694429886616
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1869,11 +1865,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1246060676780802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1e3d27d66aaafc499920d88aff5ee04, type: 3}
+  m_Script: {fileID: 11500000, guid: cad63de6be35ff84b8005a76b0e03b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
-  PatrolDestination: {fileID: 0}
+  healthPoints: 100
 --- !u!135 &135440306815080990
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1881,10 +1876,10 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246060676780802}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.33
+  m_Radius: 2.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136744816700416038
 CapsuleCollider:
@@ -1896,9 +1891,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.37
-  m_Height: 1.87
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1.03, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &137176921341901214
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

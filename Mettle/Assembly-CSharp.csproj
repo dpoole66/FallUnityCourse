@@ -51,18 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_Enemy.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyHealth.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyKnight.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyStateMachine.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Enemy\EnemyStateMachine.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Enemy\FadeIn.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerHealth.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerKnight.cs" />
-     <Compile Include="Assets\_Scripts\AI_Control\Player\AICharacterControl.cs" />
-     <Compile Include="Assets\_Scripts\AI_Control\Player\ClickToMove.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerStateMachine.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\MoveToInput.cs" />
-     <Compile Include="Assets\_Scripts\AI_Control\Player\MoveToInputB.cs" />
-     <Compile Include="Assets\_Scripts\AI_Control\Player\PatrolAgentMettle.cs" />
-     <Compile Include="Assets\_Scripts\AI_Control\Player\ThirdPersonMettle.cs" />
-     <Compile Include="Assets\_Scripts\AI_Control\Player\ThirdPersonMettleControl.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\PlayerStateMachine.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\Basic\locomotion.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\MoveToTarget.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\PlaceTargetWithMouse.cs" />
