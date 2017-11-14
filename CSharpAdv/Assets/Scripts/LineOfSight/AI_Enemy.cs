@@ -82,7 +82,7 @@ public class AI_Enemy : MonoBehaviour
 			ThisLineSight.Sensitity = LineSight.SightSensitivity.STRICT;
 
 			//Chase to patrol position
-			ThisAgent.Resume();
+			ThisAgent.isStopped = false;
 			ThisAgent.SetDestination(PatrolDestination.position);
 
 			//Wait until path is computed
@@ -92,8 +92,8 @@ public class AI_Enemy : MonoBehaviour
 			//If we can see the target then start chasing
 			if(ThisLineSight.CanSeeTarget)
 			{
-				ThisAgent.Stop();
-				CurrentState = ENEMY_STATE.CHASE;
+                ThisAgent.isStopped = true;
+                CurrentState = ENEMY_STATE.CHASE;
 				yield break;
 			}
 
@@ -110,9 +110,9 @@ public class AI_Enemy : MonoBehaviour
 			//Set loose search
 			ThisLineSight.Sensitity = LineSight.SightSensitivity.LOOSE;
 
-			//Chase to last known position
-			ThisAgent.Resume();
-			ThisAgent.SetDestination(ThisLineSight.LastKnowSighting);
+            //Chase to last known position
+            ThisAgent.isStopped = false;
+            ThisAgent.SetDestination(ThisLineSight.LastKnowSighting);
 
 			//Wait until path is computed
 			while(ThisAgent.pathPending)
@@ -121,11 +121,11 @@ public class AI_Enemy : MonoBehaviour
 			//Have we reached destination?
 			if(ThisAgent.remainingDistance <= ThisAgent.stoppingDistance)
 			{
-				//Stop agent
-				ThisAgent.Stop();
+                //Stop agent
+                ThisAgent.isStopped = true;
 
-				//Reached destination but cannot see player
-				if(!ThisLineSight.CanSeeTarget)
+                //Reached destination but cannot see player
+                if (!ThisLineSight.CanSeeTarget)
 					CurrentState = ENEMY_STATE.PATROL;
 				else //Reached destination and can see player. Reached attacking distance
 					CurrentState = ENEMY_STATE.ATTACK;
@@ -143,9 +143,9 @@ public class AI_Enemy : MonoBehaviour
 		//Loop while chasing and attacking
 		while(currentstate == ENEMY_STATE.ATTACK)
 		{
-			//Chase to player position
-			ThisAgent.Resume();
-			ThisAgent.SetDestination(PlayerTransform.position);
+            //Chase to player position
+            ThisAgent.isStopped = false;
+            ThisAgent.SetDestination(PlayerTransform.position);
 
 			//Wait until path is computed
 			while(ThisAgent.pathPending)

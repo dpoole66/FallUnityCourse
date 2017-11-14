@@ -56,14 +56,19 @@
      <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyStateMachine.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Enemy\EnemyStateMachine.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Enemy\FadeIn.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\AI_MettleStateMachine.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PaladinStateMachine.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerHealth.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerKnight.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\AI_PlayerStateMachine.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\AICharacterControl.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\MettleCharacterControl.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\MoveToInput.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Player\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\PlayerStateMachine.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\Basic\locomotion.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\MoveToTarget.cs" />
-     <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\PlaceTargetWithMouse.cs" />
+     <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\PlaceTargetWithMove.cs" />
      <Compile Include="Assets\_Scripts\Vision\SightLineDetect.cs" />
      <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\IKHands.cs" />
      <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\SmoothFollow.cs" />
@@ -71,6 +76,7 @@
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
  <Reference Include="UnityEngine.CoreModule">
  <HintPath>C:/Program Files/Unity 2017.2.0b9/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>

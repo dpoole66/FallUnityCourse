@@ -51,16 +51,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\AudreyVision.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\ClickToMoveAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\AudreyCharacterControl.cs" />
      <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LineOfSight.cs" />
      <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LineOfSightAudrey.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LocomotionAgentAudrey.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LocomotionMouseAgent.cs" />
      <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LookAtAudrey.cs" />
      <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\LookTargetAudrey.cs" />
-     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\PatrolAgentAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\SpotLightFollow.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\ThirdPersonAudrey.cs" />
+     <Compile Include="Assets\_Characters\AudreyMission\Control\Scripts\ThirdPersonAudreyController.cs" />
      <Compile Include="Assets\_CharAnim\CharController.cs" />
      <Compile Include="Assets\_CharAnim\PositionSaver.cs" />
      <Compile Include="Assets\_CharAnim\Sam\SamController.cs" />
