@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\AI_Control\Battle\MeleeManager.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyHealth.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyKnight.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Enemy\AI_EnemyStateMachine.cs" />
@@ -66,10 +67,11 @@
      <Compile Include="Assets\_Scripts\AI_Control\Player\MoveToInput.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\PlayerStateMachine.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Vision\MettleSight.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Vision\SightLineDetect.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\Basic\locomotion.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\MoveToTarget.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\PlaceTargetWithMove.cs" />
-     <Compile Include="Assets\_Scripts\Vision\SightLineDetect.cs" />
      <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\IKHands.cs" />
      <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\SmoothFollow.cs" />
      <Compile Include="Assets\Warrior Pack Bundle 1 FREE\Code\WarriorAnimationDemoFREE.cs" />
