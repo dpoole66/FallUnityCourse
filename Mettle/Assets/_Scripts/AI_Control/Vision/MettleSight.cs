@@ -32,11 +32,18 @@ public class MettleSight : MonoBehaviour {
 
     //Reference to last know object sighting, if any
     public Vector3 LastKnowSighting = Vector3.zero;
+
+    // Testing color swap when target seen
+
+    public Renderer TargetColor;
+
     //------------------------------------------
     void Awake() {
         ThisTransform = GetComponent<Transform>();
         ThisCollider = GetComponent<SphereCollider>();
         LastKnowSighting = ThisTransform.position;
+        TargetColor.material.color = Color.black;
+
     }
     //------------------------------------------
 
@@ -65,13 +72,11 @@ public class MettleSight : MonoBehaviour {
         RaycastHit Info;
 
         if (Physics.Raycast(EyePoint.position, (AI_Target.position - EyePoint.position).normalized, out Info, ThisCollider.radius)) {
-            //If player, then can see player
             if (Info.transform.CompareTag("Enemy"))
                 return true;
         }
-
         return false;
-    }
+     }
 
     //------------------------------------------
 
@@ -89,11 +94,20 @@ public class MettleSight : MonoBehaviour {
 
     //------------------------------------------
 
-    void OnTriggerStay(Collider Other) {
+        //void OnTriggerStay(Collider Other) {
+        void OnTriggerStay(Collider Other) {
+
         UpdateSight();
 
         //Update last known sighting
-        if (CanSeeTarget)
+        if (CanSeeTarget) { 
             LastKnowSighting = AI_Target.position;
+            //If player, then can see player -- test with Red color swap on target
+            TargetColor.material.color = Color.red;
+        } else {
+            TargetColor.material.color = Color.black;
+            LastKnowSighting = AI_Target.position;
+        }
+
     }
 }

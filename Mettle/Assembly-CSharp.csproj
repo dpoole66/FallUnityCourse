@@ -68,6 +68,7 @@
      <Compile Include="Assets\_Scripts\AI_Control\Player\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Player\PlayerStateMachine.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Vision\MettleSight.cs" />
+     <Compile Include="Assets\_Scripts\AI_Control\Vision\MettleSightMod.cs" />
      <Compile Include="Assets\_Scripts\AI_Control\Vision\SightLineDetect.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\Basic\locomotion.cs" />
      <Compile Include="Assets\_Scripts\Alt_PlayerControl\ClickToMove\MoveToTarget.cs" />

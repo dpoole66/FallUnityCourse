@@ -107,7 +107,7 @@ public class PlayerStateMachine : MonoBehaviour {
     public enum PLAYER_STATE { IDLE, CHASE, ATTACK };
     private PLAYER_STATE currentState = PLAYER_STATE.IDLE;
 
-    // S
+    // States
     public PLAYER_STATE CurrentState {
 
         get { return currentState; }
