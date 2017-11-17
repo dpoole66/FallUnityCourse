@@ -1,10 +1,120 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
+[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Animator))]
 
 public class AI_EnemyStateMachine : MonoBehaviour {
 
-    public enum ENEMY_STATE { PATROL, CHASE, ATTACK };
+    [SerializeField]
+    private ENEMY_STATE currentstate = ENEMY_STATE.IDLE;
+    [SerializeField] float m_MovingTurnSpeed = 360;
+    [SerializeField] float m_StationaryTurnSpeed = 180;
+    [SerializeField] float m_MoveSpeedMultiplier = 1f;
+    [SerializeField] float m_AnimSpeedMultiplier = 0.3f;
+    [SerializeField] float m_GroundCheckDistance = 0.1f;
+
+    Animator ThisAnimator;
+    Rigidbody ThisPhysics;
+    public Vector3 velocity;
+    
+
+    //Currently not used
+    bool Idle;
+    bool Patrol;
+    bool Chase;
+    bool Attack;
+
+    private EnemySight ThisLineSight = null;
+    private UnityEngine.AI.NavMeshAgent ThisAgent = null;
+    public AI_PlayerHealth PlayerHealth = null;
+    private Transform PlayerTransform = null;
+    private Transform ThisTransform = null;
+    public Transform PatrolDestination = null;
+    public float MaxDamage = 10f;
+
+
+    //Hashing the Animator params
+    int ForwardHash = Animator.StringToHash("Forward");
+    int TurnHash = Animator.StringToHash("Turn");
+    int IdleHash = Animator.StringToHash("Idle");
+    int PatrolHash = Animator.StringToHash("Patrol");
+    int ChaseHash = Animator.StringToHash("Chase");
+    int AttackHash = Animator.StringToHash("Attack");
+    int inMotionHash = Animator.StringToHash("inMotion");
+
+    //------------------------------------------
+    //------------------------------------------
+    void Awake() { 
+        ThisAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        ThisLineSight = GetComponent<EnemySight>();
+        ThisAnimator = GetComponent<Animator>();
+        ThisPhysics = GetComponent<Rigidbody>();
+        PlayerTransform = PlayerHealth.GetComponent<Transform>();
+        ThisTransform = GetComponent<Transform>();
+        ThisAgent.updatePosition = false;
+
+        //Configure starting state
+        CurrentState = ENEMY_STATE.IDLE;
+    }
+ 
+
+    //------------------------------------------
+    //------------------------------------------
+    //Update to drive animator
+    //------------------------------------------
+    //------------------------------------------
+    void FixedUpdate() {
+
+        Vector3 position = ThisAnimator.rootPosition;
+        Vector3 move;
+        position = ThisAgent.nextPosition;
+        transform.position = position;
+        velocity = ThisAgent.velocity;
+        move = velocity;
+
+        //UpdateAnimator(move);
+        ThisAnimator.SetFloat("Forward", move.z, 0.1f, Time.deltaTime);
+        ThisAnimator.SetFloat("Turn", move.x, 0.1f, Time.deltaTime);
+
+        if (move.magnitude > 0.0f) {
+            ThisAnimator.speed = m_AnimSpeedMultiplier;
+        } else {
+            ThisAnimator.speed = 1.0f;
+        }
+
+        // Set inMotion 
+        if (move.x + move.z != 0.0f) {
+            ThisAnimator.SetTrigger(inMotionHash);
+        } 
+
+        // Debugs for states
+        if (Input.GetKeyDown(KeyCode.I)) {
+            CurrentState = ENEMY_STATE.IDLE;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P)) {
+            CurrentState = ENEMY_STATE.PATROL;
+        }
+
+        if (Input.GetKeyDown(KeyCode.C)) {
+            CurrentState = ENEMY_STATE.CHASE;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X)) {
+            CurrentState = ENEMY_STATE.ATTACK;
+        }
+    }
+
+  
+    //------------------------------------------
+    //------------------------------------------
+
+    public enum ENEMY_STATE { IDLE, PATROL, CHASE, ATTACK };
+
     //------------------------------------------
     public ENEMY_STATE CurrentState {
         get { return currentstate; }
@@ -17,98 +127,23 @@ public class AI_EnemyStateMachine : MonoBehaviour {
             StopAllCoroutines();
 
             switch (currentstate) {
-                case ENEMY_STATE.PATROL:
+
+                case ENEMY_STATE.IDLE:
+                StartCoroutine(AIIdle());
+                break;
+
+                case ENEMY_STATE.PATROL:   
                 StartCoroutine(AIPatrol());
                 break;
 
-                case ENEMY_STATE.CHASE:
+                case ENEMY_STATE.CHASE:  
                 StartCoroutine(AIChase());
                 break;
 
                 case ENEMY_STATE.ATTACK:
-                StartCoroutine(AIAttack());
+                StartCoroutine(AIAttack());    
                 break;
             }
-        }
-    }
-
-    [SerializeField]
-    private ENEMY_STATE currentstate = ENEMY_STATE.PATROL;
-
-    Animator ThisAnimator;
-    public Vector3 velocity;
-    bool Idle;
-    bool Walk;
-    bool Run;
-    bool Attack;
-
-    private SightLineDetect ThisLineSight = null;
-    private UnityEngine.AI.NavMeshAgent ThisAgent = null;
-    public AI_PlayerHealth PlayerHealth = null;
-    private Transform PlayerTransform = null;
-    public Transform PatrolDestination = null;
-    public float MaxDamage = 10f;
-
-    //Hashing the Animator params
-    int MovemntStageHash = Animator.StringToHash("Movement Stage");
-    int PatrolHash = Animator.StringToHash("Patrol");
-    int ChaseHash = Animator.StringToHash("Chase");
-    int AttackHash = Animator.StringToHash("Attack");
-
-    //------------------------------------------
-    //------------------------------------------
-    void Awake() {
-        ThisLineSight = GetComponent<SightLineDetect>();
-        ThisAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        PlayerTransform = PlayerHealth.GetComponent<Transform>();
-        ThisAgent.updatePosition = false;
-        ThisAnimator = GetComponent<Animator>();
-
-        //Configure starting state
-        CurrentState = ENEMY_STATE.PATROL;
-    }
- 
-
-    //------------------------------------------
-    //------------------------------------------
-    //Update to drive animator
-    //------------------------------------------
-    //------------------------------------------
-    void FixedUpdate() {
-
-        Vector3 position = ThisAnimator.rootPosition;
-        position = ThisAgent.nextPosition;
-        transform.position = position;
-        velocity = ThisAgent.velocity;
-
-        AnimatorStateInfo stateInfo = ThisAnimator.GetCurrentAnimatorStateInfo(0);
-
-        int roundedValue = Mathf.RoundToInt(velocity.z);
-        int moveValue = Mathf.Abs(roundedValue);
-
-        ThisAnimator.SetInteger("VeloX", Mathf.RoundToInt(velocity.x));
-        ThisAnimator.SetInteger("VeloZ", Mathf.RoundToInt(velocity.z));
-
-        if (Mathf.Abs(moveValue) == 0) {
-            ThisAnimator.SetInteger(MovemntStageHash, 0);
-        }
-
-        if (Mathf.Abs(moveValue) == 1) {
-            ThisAnimator.SetInteger(MovemntStageHash, 1); 
-        }
-
-        if (Mathf.Abs(moveValue) == 2) {
-            ThisAnimator.SetInteger(MovemntStageHash, 2);
-        }
-
-        if (Mathf.Abs(moveValue) == 3) {
-            ThisAnimator.SetInteger(MovemntStageHash, 3);
-        }
-
-        //  bool Moving = velocity.magnitude > 0.0f;
-
-        if (Input.GetKeyDown(KeyCode.X)) {
-            ThisAnimator.SetTrigger(AttackHash);
         }
     }
 
@@ -117,13 +152,43 @@ public class AI_EnemyStateMachine : MonoBehaviour {
     // Coroutines to drive state machine
     //------------------------------------------
     //------------------------------------------
+    public IEnumerator AIIdle() {
+        
+        // Loop idle
+        while (currentstate == ENEMY_STATE.IDLE) {
+            //Set Trigger
+            ThisAnimator.SetTrigger(IdleHash);
+
+            ThisLineSight.Sensitity = EnemySight.SightSensitivity.STRICT;
+
+            //Stand in place
+            ThisAgent.isStopped = true;
+            ThisAgent.SetDestination(ThisAnimator.rootPosition);
+            yield return null;
+
+            //If we can see the target then start chasing
+            if (ThisLineSight.CanSeeTarget) {
+                ThisAgent.isStopped = false;
+                CurrentState = ENEMY_STATE.CHASE;
+                yield break;
+            }
+
+            yield return null;
+        }
+        
+
+
+    }
+
     public IEnumerator AIPatrol() {
+
         //Loop while patrolling
         while (currentstate == ENEMY_STATE.PATROL) {
-            //Set Patrol trigger in Animator
+            //Set Trigger
             ThisAnimator.SetTrigger(PatrolHash);
+
             //Set strict search
-            ThisLineSight.Sensitity = SightLineDetect.SightSensitivity.STRICT;
+            ThisLineSight.Sensitity = EnemySight.SightSensitivity.STRICT;
 
             //Chase to patrol position
             ThisAgent.isStopped = false;
@@ -135,7 +200,7 @@ public class AI_EnemyStateMachine : MonoBehaviour {
 
             //If we can see the target then start chasing
             if (ThisLineSight.CanSeeTarget) {
-                ThisAgent.isStopped = true;
+                ThisAgent.isStopped = false;
                 CurrentState = ENEMY_STATE.CHASE;
                 yield break;
             }
@@ -146,34 +211,37 @@ public class AI_EnemyStateMachine : MonoBehaviour {
     }
     //------------------------------------------
     public IEnumerator AIChase() {
+
         //Loop while chasing
         while (currentstate == ENEMY_STATE.CHASE) {
-            //Set Chase trigger in Animator
+            //Set Trigger
             ThisAnimator.SetTrigger(ChaseHash);
+
             //Set loose search
-            ThisLineSight.Sensitity = SightLineDetect.SightSensitivity.LOOSE;
+            ThisLineSight.Sensitity = EnemySight.SightSensitivity.LOOSE;
 
             //Chase to last known position
             ThisAgent.isStopped = false;
             ThisAgent.SetDestination(ThisLineSight.LastKnowSighting);
-
+            
             //Wait until path is computed
-            while (ThisAgent.pathPending)
-                yield return null;
+            while (ThisAgent.pathPending)   
+            yield return null;
 
             //Have we reached destination?
-            if (ThisAgent.remainingDistance <= ThisAgent.stoppingDistance) {
+            float distTo = Vector3.Distance(ThisTransform.position, ThisAgent.destination);
+
+            if (distTo <= 1.0f) {
                 //Stop agent
                 ThisAgent.isStopped = true;
+                Debug.Log("STOPPED");
 
                 //Reached destination but cannot see player
                 if (!ThisLineSight.CanSeeTarget)
-                    CurrentState = ENEMY_STATE.PATROL;
+                    CurrentState = ENEMY_STATE.IDLE;
                 else //Reached destination and can see player. Reached attacking distance
                     CurrentState = ENEMY_STATE.ATTACK;
-                    //Set Attack trigger in Animator
-                    ThisAnimator.SetTrigger(AttackHash);
-
+               
                 yield break;
             }
 
@@ -183,29 +251,32 @@ public class AI_EnemyStateMachine : MonoBehaviour {
     }
     //------------------------------------------
     public IEnumerator AIAttack() {
+
         //Loop while chasing and attacking
         while (currentstate == ENEMY_STATE.ATTACK) {
-            //Set Attack trigger in Animator
-            ThisAnimator.SetTrigger(AttackHash);
-            //Chase to player position
-            ThisAgent.isStopped = false;
-            ThisAgent.SetDestination(PlayerTransform.position);
 
-            //Wait until path is computed
-            while (ThisAgent.pathPending)
+            //Set Trigger
+            ThisAnimator.SetTrigger(AttackHash);
+
+            //Attack standing range
+            float attackRange = Vector3.Distance(ThisTransform.position, ThisAgent.destination);
+
+            if (ThisLineSight.CanSeeTarget && attackRange <= 2.0f) {
+                Debug.Log("Range");
+      
+                //Stand in place
+                ThisAgent.isStopped = true;
+                ThisAgent.SetDestination(ThisAnimator.rootPosition);
+             
                 yield return null;
 
-            //Has player run away?
-            if (ThisAgent.remainingDistance > ThisAgent.stoppingDistance) {
-                //Change back to chase
-                CurrentState = ENEMY_STATE.CHASE;
-                yield break;
-            } else {
-                //Attack
-                PlayerHealth.HealthPoints -= MaxDamage * Time.deltaTime;
-            }
+            }  else {
 
-            //Wait until next frame
+                CurrentState = ENEMY_STATE.CHASE;
+
+                yield return null;
+            }
+            //Wait for next frame
             yield return null;
         }
 

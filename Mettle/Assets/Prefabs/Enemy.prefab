@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 114951694429886616}
   - component: {fileID: 114812124307431086}
   - component: {fileID: 114072190247138574}
-  - component: {fileID: 114454933781856296}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -1122,7 +1121,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012972633076578}
-  m_LocalRotation: {x: 0.69430655, y: -0.0018702685, z: 0.7196732, w: -0.0023574857}
+  m_LocalRotation: {x: 0.6943065, y: -0.0018702683, z: 0.71967316, w: -0.0023574855}
   m_LocalPosition: {x: -0.20052062, y: 0.000047626494, z: -0.041074388}
   m_LocalScale: {x: 1, y: 1, z: 1.0000001}
   m_Children:
@@ -1829,18 +1828,6 @@ MonoBehaviour:
   PlayerHealth: {fileID: 0}
   PatrolDestination: {fileID: 0}
   MaxDamage: 10
---- !u!114 &114454933781856296
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1246060676780802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a018171c11976d049bd48a4dbfb504a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 100
 --- !u!114 &114710654615379910
 MonoBehaviour:
   m_ObjectHideFlags: 1

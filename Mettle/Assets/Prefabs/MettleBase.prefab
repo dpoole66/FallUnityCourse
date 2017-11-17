@@ -827,11 +827,10 @@ GameObject:
   - component: {fileID: 195335982307459370}
   - component: {fileID: 136404620400161712}
   - component: {fileID: 135043357344459074}
-  - component: {fileID: 114703719865948254}
-  - component: {fileID: 114472793961357008}
-  - component: {fileID: 114892949468366472}
   - component: {fileID: 114610922973714530}
-  - component: {fileID: 114007295608108560}
+  - component: {fileID: 114347453328403550}
+  - component: {fileID: 114066300176590902}
+  - component: {fileID: 114999155552496500}
   m_Layer: 8
   m_Name: MettleBase
   m_TagString: Player
@@ -1315,8 +1314,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1116802942200388}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.1, z: 0.284}
+  m_LocalRotation: {x: -0.000000037252896, y: -0, z: 0.000000002793967, w: 1}
+  m_LocalPosition: {x: 0, y: 0.100000374, z: 0.28400007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4822039874315982}
@@ -1384,13 +1383,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1728152850895738}
-  m_LocalRotation: {x: -0.21350418, y: 0.24860308, z: 0.24340868, w: 0.9128881}
-  m_LocalPosition: {x: 0.098575704, y: -0.058739666, z: -0.0051493463}
+  m_LocalRotation: {x: -0.2135042, y: 0.24860308, z: 0.24340867, w: 0.91288817}
+  m_LocalPosition: {x: 0.098575726, y: -0.058739647, z: -0.005149357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4938650421154966}
   m_Father: {fileID: 4924397888005290}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4439478255623938
 Transform:
@@ -2003,7 +2002,7 @@ Transform:
   m_Children:
   - {fileID: 4875611720437934}
   m_Father: {fileID: 4924397888005290}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4913152496602390
 Transform:
@@ -2057,8 +2056,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4379242857273174}
-  - {fileID: 4404838517138596}
   - {fileID: 4876273853320796}
+  - {fileID: 4404838517138596}
   m_Father: {fileID: 4183450644920222}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2212,7 +2211,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678894866621398}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1a470be17cdbfd6428c49fbf41974bd0, type: 3}
+  m_Avatar: {fileID: 9000000, guid: f4398ebd9ca0a9d42a64f21d2a76c031, type: 3}
   m_Controller: {fileID: 9100000, guid: cbf50254e05f939429ccb66d51eb414d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -2221,7 +2220,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114007295608108560
+--- !u!114 &114066300176590902
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2229,26 +2228,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1678894866621398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 972a8a50f608d0d4c811c1609c6fc407, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MettleCam: {fileID: 20286884487192230}
-  range: 23
-  thisLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &114472793961357008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1678894866621398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0af4fcd8874b64ca17ea08da4221ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 821dd99f850021f4783fc0d1ff86c3a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &114347453328403550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1678894866621398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a911ea3acb347c649a77a3bb724359a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 100
 --- !u!114 &114576102504842324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2264,7 +2259,8 @@ MonoBehaviour:
   range: 25
   thisLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 0
+  damage: 0
 --- !u!114 &114610922973714530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2282,8 +2278,7 @@ MonoBehaviour:
   AI_Target: {fileID: 0}
   EyePoint: {fileID: 4277745964043586}
   LastKnowSighting: {x: 0, y: 0, z: 0}
-  TargetColor: {fileID: 0}
---- !u!114 &114703719865948254
+--- !u!114 &114999155552496500
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2291,30 +2286,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1678894866621398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f5f40bc2a91f146ba50968cad76e5e, type: 3}
+  m_Script: {fileID: 11500000, guid: a698b693a998a2b42a55e61fb3171f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_MovingTurnSpeed: 360
   m_StationaryTurnSpeed: 180
+  m_JumpPower: 12
+  m_GravityMultiplier: 2
+  m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
-  m_AnimSpeedMultiplier: 0.3
+  m_AnimSpeedMultiplier: 1
   m_GroundCheckDistance: 0.1
-  MaxDamage: 10
-  IdleDestination: {fileID: 0}
-  velocity: {x: 0, y: 0}
-  currentstate: 0
---- !u!114 &114892949468366472
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1678894866621398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a018171c11976d049bd48a4dbfb504a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 100
 --- !u!124 &124629030696912770
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2332,7 +2314,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5.14
+  m_Radius: 8.32
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136404620400161712
 CapsuleCollider:
@@ -2361,7 +2343,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1a470be17cdbfd6428c49fbf41974bd0, type: 3}
+  - {fileID: 2100000, guid: 954a3f8b8afd9e641a5eed678bb43537, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2408,7 +2390,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1a470be17cdbfd6428c49fbf41974bd0, type: 3}
+  - {fileID: 2100000, guid: 954a3f8b8afd9e641a5eed678bb43537, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2506,7 +2488,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1a470be17cdbfd6428c49fbf41974bd0, type: 3}
+  - {fileID: 2100000, guid: 954a3f8b8afd9e641a5eed678bb43537, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
