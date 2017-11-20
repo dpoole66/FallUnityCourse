@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-namespace UnityStandardAssets.Characters.ThirdPerson {
+namespace Mettle {
+
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
     [RequireComponent(typeof(Animator))]
@@ -106,6 +107,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson {
             m_Animator.SetFloat("Turn", m_TurnAmount, 0.1f, Time.deltaTime);
             m_Animator.SetBool("Crouch", m_Crouching);
             m_Animator.SetBool("OnGround", m_IsGrounded);
+
             if (!m_IsGrounded) {
                 m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
             }
@@ -168,6 +170,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson {
                 // we preserve the existing y part of the current velocity.
                 v.y = m_Rigidbody.velocity.y;
                 m_Rigidbody.velocity = v;
+                
             }
         }
 

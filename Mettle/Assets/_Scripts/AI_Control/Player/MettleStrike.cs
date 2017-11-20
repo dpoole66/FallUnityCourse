@@ -21,7 +21,7 @@ public class MettleStrike : MonoBehaviour {
 
         // Update is called once per frame
         void Update() {
-            if (Input.GetButton("Fire3")) {
+            if (Input.GetButtonDown("Fire2")) {
 
                 Strike();
 
@@ -29,8 +29,8 @@ public class MettleStrike : MonoBehaviour {
         }
 
         public void Strike() {
- 
-            Debug.Log("Strike");
+            Mettle.SendMessage("AttackNow");
+
             return;
 
         }
