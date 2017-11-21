@@ -35,13 +35,16 @@ public class MettleSight : MonoBehaviour {
 
     // Testing color swap when target seen
 
-    //public Renderer TargetColor;
+    public Renderer TargetColor;
+
+    private Color colorToggle;
 
     //------------------------------------------
     void Awake() {
         ThisTransform = GetComponent<Transform>();
         ThisCollider = GetComponent<SphereCollider>();
         LastKnowSighting = ThisTransform.position;
+
         //TargetColor.material.color = Color.black;
 
     }
@@ -101,13 +104,17 @@ public class MettleSight : MonoBehaviour {
 
         //Update last known sighting
         if (CanSeeTarget) { 
-            LastKnowSighting = AI_Target.position;
-            //If player, then can see player -- test with Red color swap on target
-            //TargetColor.material.color = Color.red;
-            } else {
-                //TargetColor.material.color = Color.black;
-                LastKnowSighting = AI_Target.position;
-            }
 
+            LastKnowSighting = AI_Target.position;
+            TargetColor.material.color = Color.white;
+            return;
+
+        } else {
+            LastKnowSighting = AI_Target.position;
+            TargetColor.material.color = Color.black;
+            return;
         }
+
+    }
+
 }

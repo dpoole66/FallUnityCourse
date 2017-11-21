@@ -19,6 +19,9 @@ public class EnemySight : MonoBehaviour {
 
     //Reference to target
     public Transform AI_Target = null;
+    private Transform EnemyTransform = null;
+
+    public Renderer TargetColor;
 
     //Reference to eyes
     public Transform EyePoint = null;
@@ -32,28 +35,26 @@ public class EnemySight : MonoBehaviour {
     //Reference to last know object sighting, if any
     public Vector3 LastKnowSighting = Vector3.zero;
 
-    // Testing color swap when target seen
 
-    //public Renderer TargetColor;
+
 
     //------------------------------------------
     void Awake() {
         ThisTransform = GetComponent<Transform>();
+        EnemyTransform = AI_Target.GetComponent<Transform>();
         ThisCollider = GetComponent<SphereCollider>();
+        TargetColor = AI_Target.GetComponent<Renderer>();
         LastKnowSighting = ThisTransform.position;
-        //TargetColor.material.color = Color.black;
 
     }
     //------------------------------------------
 
     bool InFOV() {
         //Get direction to target
-        Vector3 DirToTarget = AI_Target.position - EyePoint.position;
-        //Debug.Log("Direction " + DirToTarget);
+        Vector3 DirToTarget = EnemyTransform.position - EyePoint.position;
 
         //Get angle between forward and look direction
         float Angle = Vector3.Angle(EyePoint.forward, DirToTarget);
-        //Debug.Log("Angle " + Angle);
 
         //Are we within field of view?
         if (Angle <= FieldOfView) {  
@@ -69,7 +70,7 @@ public class EnemySight : MonoBehaviour {
     bool ClearLineofSight() {
         RaycastHit Info;
 
-        if (Physics.Raycast(EyePoint.position, (AI_Target.position - EyePoint.position).normalized, out Info, ThisCollider.radius)) {
+        if (Physics.Raycast(EyePoint.position, (EnemyTransform.position - EyePoint.position).normalized, out Info, ThisCollider.radius)) {
             if (Info.transform.CompareTag("Player"))
             return true;
         }
@@ -91,6 +92,7 @@ public class EnemySight : MonoBehaviour {
         }
     }
 
+  
     //------------------------------------------
 
     //void OnTriggerStay(Collider Other) {
@@ -101,12 +103,20 @@ public class EnemySight : MonoBehaviour {
         //Update last known sighting
         if (CanSeeTarget) {
             LastKnowSighting = AI_Target.position;
-            //If player, then can see player -- test with Red color swap on target
-            //TargetColor.material.color = Color.red;
+
         } else {
-            //TargetColor.material.color = Color.black;
             LastKnowSighting = AI_Target.position;
         }
 
     }
+
+    void Update() {
+        if (CanSeeTarget) {
+            //If player, then can see player -- test with Red color swap on target
+            TargetColor.material.color = Color.white;
+        } else {
+            TargetColor.material.color = Color.black;
+        }
+    }
+
 }

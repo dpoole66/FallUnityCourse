@@ -7,7 +7,7 @@ using Mettle;
 public class State : ScriptableObject {
 
     public Action[] actions;
-    public Color sceneGizmoColor = Color.gray;
+    public Color sceneGizmoColor = Color.red;
 
     public void UpdateState(StateController controller) {
 
@@ -19,11 +19,8 @@ public class State : ScriptableObject {
 
         for(int i = 0; i < actions.Length; i++) {
 
-            actions[i].Act(controller);
-
-        }
-
-    }
-
-
+            actions[i].Act(controller);  
+            
+        }  
+    }   
 }

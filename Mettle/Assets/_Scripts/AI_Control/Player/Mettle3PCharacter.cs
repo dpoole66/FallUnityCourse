@@ -27,6 +27,7 @@ namespace Mettle {
         Vector3 m_CapsuleCenter;
         CapsuleCollider m_Capsule;
         bool m_Crouching;
+        public Transform target;
 
 
         void Start() {
@@ -193,6 +194,10 @@ namespace Mettle {
                 m_GroundNormal = Vector3.up;
                 m_Animator.applyRootMotion = false;
             }
+        }
+
+        public void SetTarget(Transform target) {
+            this.target = target;
         }
     }
 }

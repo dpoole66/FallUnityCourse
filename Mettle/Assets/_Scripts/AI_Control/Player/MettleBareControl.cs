@@ -88,11 +88,6 @@ namespace Mettle {
             
         }
 
-
-        public void SetTarget(Transform target) {
-            this.goTarget = target;
-        }
-
     }
 }
 

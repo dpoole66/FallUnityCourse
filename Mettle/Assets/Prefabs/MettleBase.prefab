@@ -619,6 +619,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1504595203663102
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4378516003863702}
+  m_Layer: 8
+  m_Name: Chest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1504671937277510
 GameObject:
   m_ObjectHideFlags: 1
@@ -829,8 +844,9 @@ GameObject:
   - component: {fileID: 135043357344459074}
   - component: {fileID: 114610922973714530}
   - component: {fileID: 114347453328403550}
-  - component: {fileID: 114066300176590902}
   - component: {fileID: 114999155552496500}
+  - component: {fileID: 114631476667032640}
+  - component: {fileID: 114892802449430972}
   m_Layer: 8
   m_Name: MettleBase
   m_TagString: Player
@@ -1315,7 +1331,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1116802942200388}
   m_LocalRotation: {x: -0.000000037252896, y: -0, z: 0.000000002793967, w: 1}
-  m_LocalPosition: {x: 0, y: 0.100000374, z: 0.28400007}
+  m_LocalPosition: {x: 0, y: 0.103, z: 0.261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4822039874315982}
@@ -1362,6 +1378,19 @@ Transform:
   - {fileID: 4636963364036538}
   m_Father: {fileID: 4756818488895356}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4378516003863702
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504595203663102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4875611720437934}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4379242857273174
 Transform:
@@ -1522,13 +1551,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1264930923512932}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.2869518, y: 0.40012395, z: 0.17122625, w: 0.8533705}
+  m_LocalPosition: {x: 0.921, y: 1.042, z: -0.882}
+  m_LocalScale: {x: 0.04891306, y: 0.7440479, z: 0.098657325}
   m_Children: []
   m_Father: {fileID: 4183450644920222}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.654001, y: 56.598003, z: 33.898003}
 --- !u!4 &4557354972723838
 Transform:
   m_ObjectHideFlags: 1
@@ -1987,6 +2016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4840346370882314}
+  - {fileID: 4378516003863702}
   m_Father: {fileID: 4876273853320796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2191,7 +2221,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2220,18 +2250,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114066300176590902
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1678894866621398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 821dd99f850021f4783fc0d1ff86c3a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &114347453328403550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2278,6 +2296,34 @@ MonoBehaviour:
   AI_Target: {fileID: 0}
   EyePoint: {fileID: 4277745964043586}
   LastKnowSighting: {x: 0, y: 0, z: 0}
+--- !u!114 &114631476667032640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1678894866621398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 043bca8b1a8e1404db15e17569cbed5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goTarget: {fileID: 0}
+--- !u!114 &114892802449430972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1678894866621398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 941bfe31b1526234b82e9eb082dd6ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: {fileID: 0}
+  EnemyTarget: {fileID: 0}
+  EnemyHealth: {fileID: 0}
+  MaxDamage: 50
+  mettleEyes: {fileID: 4277745964043586}
 --- !u!114 &114999155552496500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2296,7 +2342,7 @@ MonoBehaviour:
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.4
+  m_GroundCheckDistance: 0.5
 --- !u!124 &124629030696912770
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2325,8 +2371,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.6
+  m_Radius: 0.99
+  m_Height: 2.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!137 &137236990686155058

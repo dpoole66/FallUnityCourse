@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MonkeyBusiness.unity
+- path: Assets/Scenes/FSMSetup.unity
   isLoaded: 1
   isActive: 1
